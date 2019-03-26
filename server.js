@@ -9,7 +9,7 @@ let port = process.env.PORT || 3000;
 
 server.listen(port, (err) => {
     if (err) throw err
-    console.log('listening on port 3000')
+    console.log('listening on port:', port)
 });
 
 const io = socketIO(server);
