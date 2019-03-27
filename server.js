@@ -33,5 +33,8 @@ io.on('connection', (socket) => {
     socket.on('right', () => {
         io.emit('go_right', socket.id);
     });
-    socket.on('disconnect', () => console.log('Client Disconnected:', socket.id));
+    socket.on('disconnect', () => {
+        console.log('Client Disconnected:', socket.id);
+        io.emit('delete_player', socket.id);
+    });
 })

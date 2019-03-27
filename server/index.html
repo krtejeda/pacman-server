@@ -87,10 +87,16 @@
 			socket.on('go_right', (id) => {
 				PACPEOPLE[id].movePacman(1);
 			});
+			socket.on('delete_player', (id) => {
+				PACPEOPLE[id].erasePacman();
+				let pos = PACPEOPLE_ARRAY.indexOf(PACPEOPLE[id]);
+				PACPEOPLE_ARRAY.splice(pos, 1);
+				delete PACPEOPLE[id];
+			});
 
-			if (GAMEOVER) {
-				initGame(true);
-			}
+			// if (GAMEOVER) {
+			// 	initGame(true);
+			// }
 		});
 
 	</script>

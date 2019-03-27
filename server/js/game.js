@@ -325,9 +325,10 @@ function gameover() {
 	TIME_LIFE = 0;
 	TIME_FRUITS = 0;
 
-	LIFES = 2;
+	LIFES = 4;
 	LEVEL = 1;
 	SCORE = 0;
+	setInterval(() => initGame(true), 4000);
 }
 
 function message(m) {
