@@ -328,7 +328,7 @@ function gameover() {
 	LIFES = 4;
 	LEVEL = 1;
 	SCORE = 0;
-	setInterval(() => initGame(true), 4000);
+	setTimeout(() => initGame(true), 4000);
 }
 
 function message(m) {
