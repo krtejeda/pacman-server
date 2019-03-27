@@ -97,11 +97,13 @@ function initGame(newgame) {
 	drawGhosts();
 
 	lifes();
+	if (PACPEOPLE_ARRAY) {
+		PACPEOPLE_ARRAY.forEach((elem) => {
+			elem.initPacman();
+			elem.drawPacman();
+		});
+	}
 
-	PACPEOPLE_ARRAY.forEach((elem) => {
-		elem.initPacman();
-		elem.drawPacman();
-	});
 	//ready();
 }
 
