@@ -1,3 +1,5 @@
+import { read } from "fs";
+
 var KEYDOWN = false;
 var PAUSE = false;
 var LOCK = false;
@@ -328,8 +330,10 @@ function gameover() {
 	LIFES = 4;
 	LEVEL = 1;
 	SCORE = 0;
-	setTimeout(() => initGame(true), 4000);
-
+	setTimeout(() => {
+		initGame(true);
+		ready();
+	}, 4000);
 }
 
 function message(m) {
