@@ -1,5 +1,3 @@
-import { read } from "fs";
-
 var KEYDOWN = false;
 var PAUSE = false;
 var LOCK = false;
@@ -34,6 +32,18 @@ function blinkHelp() {
 	}
 }
 
+// var pacmanArr = [];
+// var id = 0;
+// var socket = io('http://localhost:3000');
+
+// socket.on('init_game', () => {
+// 	console.log("connected");
+// 	pacmanArr.append(new Pacman(id));
+// 	let n = pacmanArr.length();
+// 	pacmanArr[n - 1].drawPacman();
+// 	ready();
+// 	id++;
+// });
 function initGame(newgame) {
 
 	if (newgame) {
@@ -97,12 +107,6 @@ function initGame(newgame) {
 	drawGhosts();
 
 	lifes();
-	if (PACPEOPLE_ARRAY) {
-		PACPEOPLE_ARRAY.forEach((elem) => {
-			elem.initPacman();
-			elem.drawPacman();
-		});
-	}
 
 	//ready();
 }
@@ -324,10 +328,8 @@ function gameover() {
 	LIFES = 4;
 	LEVEL = 1;
 	SCORE = 0;
-	setTimeout(() => {
-		initGame(true);
-		ready();
-	}, 4000);
+	setTimeout(() => initGame(true), 4000);
+
 }
 
 function message(m) {
